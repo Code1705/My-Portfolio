@@ -1,12 +1,16 @@
 .navbarLogo {
   width: 100px;
   height: 100px;
-  margin-left: 20px;
+  cursor: pointer;
+  padding-top: 1rem;
+  padding-left: 2rem;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-bottom: 30px;
   object-fit: cover;
 }
 .navbar {
+  background: #17212b;
   height: 5rem;
   width: 100vw;
   margin: 0 auto;
@@ -18,6 +22,12 @@
   top: 0;
   z-index: 3;
 }
+.active {
+  color: rgb(0, 123, 255);
+  border-bottom: 2px solid rgb(0, 123, 255);
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
 .logo {
   object-fit: cover;
   height: 3rem;
@@ -38,25 +48,59 @@
     left: 0;
     bottom: 0;
     width: 0;
-    height: 2px; /* Height of the border */
+    height: 2px;
     background-color: rgb(0, 123, 255);
-    transition: width 0.3s ease; /* Transition effect */
+    transition: width 0.3s ease;
   }
   &:hover::after {
     width: 100%;
   }
 }
 
-.desktopMenuButton {
-  background: white;
-  color: black;
-  border: none;
+.desktopMenu {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.desktopMenuButton {
+  background: white;
+  position: absolute;
+  color: black;
+  border: none;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
   padding: 0.25rem 1rem;
-  margin: 3rem;
   border-radius: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(0, 123, 255, 0.1);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease-in-out;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  &:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 15px rgba(0, 123, 255, 0.3);
+  }
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.2);
+  }
 }
 
 .desktopMenuButton img {
@@ -68,4 +112,76 @@
   height: 0.5rem;
   width: 1rem;
   margin: 0.5rem;
+}
+
+.mobMenu {
+  display: none;
+  object-fit: cover;
+  height: 1.75rem;
+}
+
+.navMenu {
+  position: absolute;
+  top: 4rem;
+  right: 2rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0.5rem;
+  height: fit-content;
+  min-width: 15rem;
+  background: #17212b;
+  border-radius: 1rem;
+}
+
+.listItem {
+  margin: 1rem;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 0.25rem;
+  transition: padding-bottom 0.3s ease;
+  &:hover {
+    color: rgb(0, 123, 255);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(0, 123, 255);
+    transition: width 0.3s ease;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .navMenu,
+  .mobMenu {
+    display: none;
+  }
+  .desktopMenu,
+  .desktopMenuButton {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbarLogo {
+    margin-left: 0%;
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+  .mobMenu {
+    display: flex;
+  }
+  .desktopMenu,
+  .desktopMenuButton {
+    display: none;
+  }
 }

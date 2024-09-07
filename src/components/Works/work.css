@@ -1,0 +1,38 @@
+#works {
+  margin: 0 auto;
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 60rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.worksTitle {
+  font-size: 3rem;
+  font-weight: 600;
+  padding-top: 3rem;
+  margin: 1.5rem;
+}
+
+.workDesc {
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 0 2rem;
+  max-width: 50rem;
+}
+
+.project-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .project-cards {
+    justify-content: center;
+  }
+}

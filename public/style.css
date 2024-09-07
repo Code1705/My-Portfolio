@@ -10,5 +10,6 @@ body {
   background-color: #17212b;
   color: white;
   overflow: hidden;
+  overflow-x: hidden;
   overflow-y: scroll;
 }
