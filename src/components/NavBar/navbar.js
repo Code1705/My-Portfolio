@@ -22,7 +22,8 @@ const Navbar = () => {
           to="intro"
           offset={-100}
           smooth={true}
-          duration={1000}>
+          duration={1000}
+        >
           {" "}
           Home{" "}
         </Link>
@@ -33,7 +34,8 @@ const Navbar = () => {
           spy={true}
           smooth={true}
           offset={-100}
-          duration={1000}>
+          duration={1000}
+        >
           About
         </Link>
         <Link
@@ -43,7 +45,8 @@ const Navbar = () => {
           spy={true}
           smooth={true}
           offset={-70}
-          duration={1000}>
+          duration={1000}
+        >
           Portfolio
         </Link>
       </div>
@@ -54,7 +57,8 @@ const Navbar = () => {
         spy={true}
         smooth={true}
         offset={-70}
-        duration={1000}>
+        duration={1000}
+      >
         <img src={contact} alt="" className="desktopMenuImg" />
         Contact Me
       </Link>
@@ -66,7 +70,8 @@ const Navbar = () => {
       />
       <div
         className="navMenu"
-        style={{ display: isMobileScreen && showMenu ? "flex" : "none" }}>
+        style={{ display: isMobileScreen && showMenu ? "flex" : "none" }}
+      >
         <Link
           activeClass="active"
           className="listItem"
@@ -75,7 +80,8 @@ const Navbar = () => {
           offset={-100}
           smooth={true}
           duration={1000}
-          onClick={() => setShowMenu(false)}>
+          onClick={() => setShowMenu(false)}
+        >
           {" "}
           Home{" "}
         </Link>
@@ -87,7 +93,8 @@ const Navbar = () => {
           smooth={true}
           offset={-100}
           duration={1000}
-          onClick={() => setShowMenu(false)}>
+          onClick={() => setShowMenu(false)}
+        >
           About
         </Link>
         <Link
@@ -98,7 +105,8 @@ const Navbar = () => {
           smooth={true}
           offset={-70}
           duration={1000}
-          onClick={() => setShowMenu(false)}>
+          onClick={() => setShowMenu(false)}
+        >
           Portfolio
         </Link>
         <Link
@@ -109,7 +117,8 @@ const Navbar = () => {
           smooth={true}
           offset={-70}
           duration={1000}
-          onClick={() => setShowMenu(false)}>
+          onClick={() => setShowMenu(false)}
+        >
           Contact Me
         </Link>
       </div>

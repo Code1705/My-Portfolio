@@ -21,12 +21,13 @@ const Work = () => {
       repoLink: "https://github.com/Code1705/Weather-App",
     },
     {
-      title: "Sort Visualizer",
-      description: "A web app to visualize sorting algorithms.",
-      technologies: ["React", "CSS"],
+      title: "Certificate Generation System",
+      description:
+        "A full stack project to generate certificate and upload in google drive.",
+      technologies: ["React", "Node js", "MongoDB", "Express js"],
       imageUrl: workImg1,
-      link: "https://code1705.github.io/Sort--Visualizer/",
-      repoLink: "https://github.com/Code1705/Sort--Visualizer",
+      link: "https://certificate-generation-system.vercel.app/",
+      repoLink: "https://github.com/Code1705/Certificate-Generation-System",
     },
   ];
 
